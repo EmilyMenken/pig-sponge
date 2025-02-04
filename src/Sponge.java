@@ -31,11 +31,38 @@ public class Sponge {
     assertEqual(6, spongeCase("e"), "e");
   }
 
+// starts with lowercase, then alternate between upper and lower
+
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    return null;
-  }
+    
+    for(String word){
+      stringSentence(word);
 
+    }
+
+    return null;
+  }//end spongeCase
+
+
+private static String stringSentence(String word){
+  String spongeWord = " ";
+  boolean lowerCase = true;
+
+  for(int i = 0; i < word.length(); i++){
+    char letter = word.charAt(i);
+
+    if(lowerCase){
+      spongeWord.toLowerCase(letter);
+    } else{
+      spongeWord.toUpperCase(letter);
+    }
+  }
+    return spongeWord;
+
+    }//end spongeSingle
+
+    
 
   // Method to help with testing, you do not need to read this.
   public static void assertEqual(int testNumber, String actual, String expected) {
@@ -45,4 +72,4 @@ public class Sponge {
       System.out.println("Test " + testNumber + " passed!");
     }
   }
-}
+}//end class Sponge
