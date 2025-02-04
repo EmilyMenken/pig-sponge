@@ -35,32 +35,33 @@ public class Sponge {
 
   // Implement your solution here!
   public static String spongeCase(String sentence) {
-    
-    for(String word){
-      stringSentence(word);
+    String[] words = sentence.split(" ");
+    String spongeSentence = "";
 
+    for (String word : words) {
+        spongeSentence += stringSentence(word) + " ";
     }
 
-    return null;
-  }//end spongeCase
+    return spongeSentence.trim();
+}//end spongeCase
 
+private static String stringSentence(String word) {
+    String spongeWord = "";
+    boolean lowerCase = true;
 
-private static String stringSentence(String word){
-  String spongeWord = " ";
-  boolean lowerCase = true;
+    for (int i = 0; i < word.length(); i++) {
+        char letter = word.charAt(i);
 
-  for(int i = 0; i < word.length(); i++){
-    char letter = word.charAt(i);
-
-    if(lowerCase){
-      spongeWord.toLowerCase(letter);
-    } else{
-      spongeWord.toUpperCase(letter);
+        if (lowerCase) {
+            spongeWord += Character.toLowerCase(letter);
+        } else {
+            spongeWord += Character.toUpperCase(letter);
+        }
+        lowerCase = !lowerCase;
     }
-  }
     return spongeWord;
+}//end stringSentence
 
-    }//end spongeSingle
 
     
 
