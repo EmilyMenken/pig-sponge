@@ -26,15 +26,33 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
-    }
+    
+    String [] words = sentence.split(" ");
 
+String result = "";
 
+    for (String word : words) {
+            result += pigSingle(word);
+            result += " ";
+        }
 
+result = result.substring(0,result.length()-1);
 
+return result;
 
+    } //end pigLatin
 
+    public static String pigSingle(String word){
+        if (word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i' || word.charAt(0) == 'o' || word.charAt(0) == 'u'){
+            return word;
+        } //end if 
 
+        char pigLetter = word.charAt(0);
+        word = word.substring(1);
+
+        word = word + pigLetter;
+        return word + "ay";
+    } //end pigSingle
 
 
     // Method to help with testing, you do not need to read this.
